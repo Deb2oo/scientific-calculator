@@ -1,7 +1,13 @@
 let display = document.getElementById('display');
 
 function appendValue(value) {
-    display.value += value;
+    if (value === 'Math.sqrt(' || value === 'Math.sin(' || value === 'Math.cos(' || 
+        value === 'Math.tan(' || value === 'Math.log10(' || value === 'Math.exp(' || 
+        value === 'Math.pow(') {
+        display.value += value + '(';
+    } else {
+        display.value += value;
+    }
 }
 
 function clearDisplay() {
@@ -14,11 +20,18 @@ function deleteLast() {
 
 function calculateResult() {
     try {
-        display.value = eval(display.value);
-        if(display.value.includes('Math')) {
-            display.value = new Function('return ' + display.value)();
-        }
+        let expression = display.value
+            .replace(/√/g, "Math.sqrt")
+            .replace(/sin/g, "Math.sin")
+            .replace(/cos/g, "Math.cos")
+            .replace(/tan/g, "Math.tan")
+            .replace(/log/g, "Math.log10")
+            .replace(/exp/g, "Math.exp")
+            .replace(/x\^y/g, "**");
+
+        display.value = eval(expression);
     } catch (error) {
         display.value = 'Error';
     }
 }
+
