@@ -6,18 +6,13 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-.heading {
-    font-size: 2rem;
-    color: white;
-    margin-bottom: 20px;
-  }
 
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg,rgb(129, 113, 201),rgb(37, 14, 151));
+    background: linear-gradient(135deg, rgb(129, 113, 201), rgb(37, 14, 151));
 }
 
 .calculator {
@@ -28,6 +23,12 @@ body {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.24);
     text-align: center;
+}
+
+.heading {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 20px;
 }
 
 #display {
@@ -44,7 +45,7 @@ body {
 
 .buttons {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 15px;
     margin-top: 20px;
 }
@@ -67,15 +68,15 @@ body {
 }
 
 .operator {
-    background:rgba(255, 117, 117, 0.73);
+    background: rgba(255, 117, 117, 0.73);
 }
 
 .operator:hover {
-    background:rgba(255, 0, 0, 0.48);
+    background: rgba(255, 0, 0, 0.48);
 }
 
 .equal {
-    background:rgba(73, 52, 212, 0.76);
+    background: rgba(73, 52, 212, 0.76);
     grid-column: span 2;
 }
 
@@ -86,10 +87,11 @@ body {
 .zero {
     grid-column: span 2;
 }
+
 .author-name {
     position: absolute;
     bottom: 10px;
     right: 10px;
     font-size: 12px;
-    color: #333;
-  }
+    color: #fff;
+}
